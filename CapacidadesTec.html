@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacidades Tecnológicas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #6366F1;
+            --accent-light: #818CF8;
+            --accent-dark: #4F46E5;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --bg-dark: #0B0F1A;
+            --bg-card: #111827;
+            --bg-card-hover: #1E293B;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border: rgba(148, 163, 184, 0.08);
+            --border-hover: rgba(99, 102, 241, 0.3);
+            --green: #34D399;
+            --cyan: #22D3EE;
+            --amber: #FBBF24;
+            --rose: #FB7185;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ── HEADER ── */
+        .cap-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 18px 0;
+            background: rgba(11, 15, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .cap-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cap-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .cap-logo span {
+            color: var(--accent);
+        }
+
+        .cap-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .cap-nav a:hover {
+            color: var(--accent-light);
+        }
+
+        /* ── HERO ── */
+        .cap-hero {
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: var(--accent-light);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+        }
+
+        .cap-hero h1 {
+            font-size: 4rem;
+            max-width: 900px;
+            margin: 0 auto 24px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cap-hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cap-hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 45px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            letter-spacing: -1px;
+        }
+
+        .hero-stat .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ── SECTIONS ── */
+        .cap-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .cap-section:nth-child(even) {
+            background: rgba(17, 24, 39, 0.5);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-number::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+            max-width: 200px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* ── LAYOUT: 2 COLUMNS ── */
+        .cap-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* ── CARDS ── */
+        .cap-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .cap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--cyan));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .cap-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cap-card:hover::before {
+            opacity: 1;
+        }
+
+        .cap-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .cap-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .cap-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── TECH TAGS ── */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            color: var(--accent-light);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── FEATURE LIST ── */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-check {
+            color: var(--green);
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(34, 211, 238, 0.05) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 16px;
+            padding: 36px 32px;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .highlight-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ── ICON COLORS ── */
+        .icon-indigo { background: rgba(99, 102, 241, 0.12); color: var(--accent-light); }
+        .icon-cyan { background: rgba(34, 211, 238, 0.12); color: var(--cyan); }
+        .icon-green { background: rgba(52, 211, 153, 0.12); color: var(--green); }
+        .icon-amber { background: rgba(251, 191, 36, 0.12); color: var(--amber); }
+        .icon-rose { background: rgba(251, 113, 133, 0.12); color: var(--rose); }
+
+        /* ── CTA SECTION ── */
+        .cap-cta {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-cta::before {
+            content: '';
+            position: absolute;
+            bottom: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cap-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .cap-cta p {
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-outline-cap {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 16px 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-left: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-cap:hover {
+            border-color: var(--accent);
+            color: var(--accent-light);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        /* ── FOOTER ── */
+        .cap-footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .cap-footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ── SCROLL REVEAL ── */
+        [data-cap-reveal] {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-cap-reveal].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [data-cap-stagger] > * {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-cap-stagger].is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+        [data-cap-stagger].is-visible > *:nth-child(2) { transition-delay: 0.12s; }
+        [data-cap-stagger].is-visible > *:nth-child(3) { transition-delay: 0.19s; }
+        [data-cap-stagger].is-visible > *:nth-child(4) { transition-delay: 0.26s; }
+        [data-cap-stagger].is-visible > *:nth-child(5) { transition-delay: 0.33s; }
+        [data-cap-stagger].is-visible > *:nth-child(6) { transition-delay: 0.40s; }
+
+        [data-cap-stagger].is-visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .cap-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cap-hero { padding: 140px 0 80px; }
+            .cap-hero h1 { font-size: 2.4rem; letter-spacing: -0.5px; }
+            .cap-hero p { font-size: 1rem; }
+            .hero-stats { gap: 30px; }
+            .hero-stat .num { font-size: 1.8rem; }
+            .cap-section { padding: 70px 0; }
+            .section-header h2 { font-size: 2rem; }
+            .cap-card-grid { grid-template-columns: 1fr; }
+            .cap-cta h2 { font-size: 2.2rem; }
+            .cap-nav { display: none; }
+            .btn-outline-cap { margin-left: 0; margin-top: 12px; display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="cap-header">
+        <div class="container">
+            <a href="#" class="cap-logo">Dev<span>Solutions</span></a>
+            <nav class="cap-nav">
+                <a href="#web">Plataformas Web</a>
+                <a href="#ia">Inteligencia Artificial</a>
+                <a href="#auto">Automatización</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="cap-hero">
+        <div class="container">
+
+            <h1 data-cap-reveal>Capacidades Tecnológicas y <em>Soluciones que Podemos Desarrollar</em></h1>
+            <p data-cap-reveal>Desarrollo de software a medida, integración de inteligencia artificial y automatización de procesos para empresas que quieren escalar.</p>
+            <div data-cap-reveal>
+                <a href="#contacto" class="btn-primary">Hablemos de tu Proyecto</a>
+                <a href="#web" class="btn-outline-cap">Ver Capacidades</a>
+            </div>
+            <div class="hero-stats" data-cap-reveal>
+                <div class="hero-stat">
+                    <div class="num">8</div>
+                    <div class="label">Áreas de Expertise</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">Full-Stack</div>
+                    <div class="label">Desarrollo End-to-End</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">IA</div>
+                    <div class="label">Integración Nativa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. DESARROLLO DE PLATAFORMAS WEB INTELIGENTES -->
+    <section id="web" class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">01 — Plataformas Web</div>
+                    <h2>Desarrollo de Plataformas Web Inteligentes</h2>
+                    <p>Aplicaciones web completas con backend, base de datos e integración de IA. Software empresarial a medida.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python (FastAPI, Flask)</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL / SQLite</span>
+                        <span class="tech-tag">APIs REST</span>
+                        <span class="tech-tag">Dashboards Interactivos</span>
+                    </div>
+                </div>
+                <div class="cap-card-grid" data-cap-stagger>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-indigo">📊</div>
+                        <h4>Dashboards Analíticos</h4>
+                        <p>Paneles interactivos con visualizaciones en tiempo real para toma de decisiones.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-cyan">☁️</div>
+                        <h4>Plataformas SaaS</h4>
+                        <p>Productos de software como servicio listos para el mercado.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-green">🏢</div>
+                        <h4>Sistemas Internos</h4>
+                        <p>Herramientas internas que optimizan operaciones de empresas.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-amber">⚙️</div>
+                        <h4>Paneles Administrativos</h4>
+                        <p>Interfaces de gestión intuitivas para controlar tu negocio.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-rose">📋</div>
+                        <h4>Reportes Automatizados</h4>
+                        <p>Generación automática de informes con datos actualizados.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-indigo">🎓</div>
+                        <h4>Plataformas Educativas</h4>
+                        <p>Sistemas de contenido y aprendizaje interactivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. INTEGRACIÓN DE INTELIGENCIA ARTIFICIAL -->
+    <section id="ia" class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">02 — Inteligencia Artificial</div>
+                    <h2>Integración de IA en Sistemas Empresariales</h2>
+                    <p>Modelos de inteligencia artificial integrados dentro de sistemas empresariales. Convierte plataformas normales en sistemas inteligentes.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">Gemini</span>
+                        <span class="tech-tag">Modelos LLM</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                </div>
+                <div class="cap-card-grid" data-cap-stagger>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-cyan">🤖</div>
+                        <h4>Asistentes IA</h4>
+                        <p>Asistentes inteligentes integrados dentro de tus plataformas.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-green">📈</div>
+                        <h4>Análisis Automático de Datos</h4>
+                        <p>Procesamiento inteligente de información para insights accionables.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-indigo">📄</div>
+                        <h4>Generación de Reportes</h4>
+                        <p>Reportes generados automáticamente con análisis de IA.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-amber">📑</div>
+                        <h4>Análisis de Documentos</h4>
+                        <p>Extracción y comprensión inteligente de documentos.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-rose">💡</div>
+                        <h4>Sistemas de Recomendación</h4>
+                        <p>Algoritmos que sugieren contenido o productos relevantes.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-cyan">👁️</div>
+                        <h4>Análisis de Imágenes</h4>
+                        <p>Procesamiento y clasificación visual con modelos de IA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. AUTOMATIZACIÓN DE PROCESOS -->
+    <section id="auto" class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">03 — Automatización</div>
+                    <h2>Automatización de Procesos</h2>
+                    <p>Sistemas que automatizan procesos manuales de empresas. Reduce trabajo manual y errores operativos.</p>
+                </div>
+                <div>
+                    <ul class="feature-list" data-cap-reveal>
+                        <li><span class="feature-check">▸</span> Extracción automática de datos de páginas web (web scraping)</li>
+                        <li><span class="feature-check">▸</span> Procesamiento automático de archivos y documentos</li>
+                        <li><span class="feature-check">▸</span> Generación automática de reportes periódicos</li>
+                        <li><span class="feature-check">▸</span> Integración entre sistemas mediante APIs</li>
+                        <li><span class="feature-check">▸</span> Pipelines de datos end-to-end</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top: 30px;" data-cap-reveal>
+                        <h3>🔄 Resultado</h3>
+                        <p>Reducción significativa de trabajo manual, eliminación de errores humanos y procesos que funcionan 24/7 sin intervención.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SISTEMAS DE ANÁLISIS DE DATOS -->
+    <section class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">04 — Análisis de Datos</div>
+                    <h2>Sistemas de Análisis de Datos</h2>
+                    <p>Herramientas para análisis avanzado de datos y visualización interactiva.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Modelos Estadísticos</span>
+                        <span class="tech-tag">Visualización Interactiva</span>
+                    </div>
+                </div>
+                <div class="cap-card-grid" data-cap-stagger>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-green">📊</div>
+                        <h4>Dashboards Analíticos</h4>
+                        <p>Visualizaciones interactivas que transforman datos en decisiones.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-indigo">📐</div>
+                        <h4>Análisis Estadístico</h4>
+                        <p>Modelos estadísticos rigurosos para entender tus datos.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-cyan">🧮</div>
+                        <h4>Simulaciones Matemáticas</h4>
+                        <p>Simulaciones numéricas para escenarios complejos.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-amber">🔮</div>
+                        <h4>Modelos Predictivos</h4>
+                        <p>Predicciones basadas en datos históricos y machine learning.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-card-icon icon-rose">💰</div>
+                        <h4>Análisis Financiero</h4>
+                        <p>Herramientas de análisis para datos financieros y métricas clave.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SISTEMAS ESPECIALIZADOS EN FINANZAS -->
+    <section class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">05 — Finanzas</div>
+                    <h2>Sistemas Especializados en Finanzas</h2>
+                    <p>Experiencia desarrollando herramientas para el sector financiero.</p>
+                </div>
+                <div>
+                    <div class="cap-card-grid" data-cap-stagger>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-green">📉</div>
+                            <h4>Análisis de Trading</h4>
+                            <p>Reportes detallados de performance y estrategias de trading.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-rose">⚠️</div>
+                            <h4>Simulaciones de Riesgo</h4>
+                            <p>Evaluación de escenarios y gestión de riesgo cuantitativo.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-indigo">📂</div>
+                            <h4>Optimización de Portafolios</h4>
+                            <p>Algoritmos de optimización para mejor relación riesgo-retorno.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-cyan">📊</div>
+                            <h4>Dashboards de Performance</h4>
+                            <p>Paneles de control para métricas financieras en tiempo real.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 24px;" data-cap-reveal>
+                        <h3>🎯 Clientes Potenciales</h3>
+                        <p>Traders independientes, fondos de inversión, brokers y empresas fintech que necesitan herramientas analíticas de alto rendimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. DESARROLLO DE APIs Y BACKENDS ESCALABLES -->
+    <section class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">06 — APIs &amp; Backends</div>
+                    <h2>APIs y Backends Escalables</h2>
+                    <p>Backends completos para productos digitales. Infraestructura tecnológica para startups.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Arquitectura API</span>
+                    </div>
+                </div>
+                <div>
+                    <ul class="feature-list" data-cap-reveal>
+                        <li><span class="feature-check">▸</span> Autenticación y autorización de usuarios</li>
+                        <li><span class="feature-check">▸</span> Sistemas de suscripción y membresías</li>
+                        <li><span class="feature-check">▸</span> Integración de pagos online (Stripe)</li>
+                        <li><span class="feature-check">▸</span> APIs RESTful para aplicaciones móviles y web</li>
+                        <li><span class="feature-check">▸</span> Paneles administrativos completos</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top: 30px;" data-cap-reveal>
+                        <h3>🚀 Ideal para Startups</h3>
+                        <p>Todo lo necesario para lanzar y escalar un producto digital desde cero: autenticación, pagos, APIs y panel de control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. EXTENSIONES DE NAVEGADOR -->
+    <section class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">07 — Extensiones de Navegador</div>
+                    <h2>Extensiones de Navegador</h2>
+                    <p>Herramientas que viven dentro del navegador para extender la funcionalidad web.</p>
+                </div>
+                <div>
+                    <div class="cap-card-grid" data-cap-stagger>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-indigo">🧩</div>
+                            <h4>Extensiones de Chrome</h4>
+                            <p>Extensiones personalizadas para Chrome y navegadores basados en Chromium.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-cyan">🔗</div>
+                            <h4>Interacción con Plataformas</h4>
+                            <p>Herramientas que interactúan con plataformas web existentes.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-green">💬</div>
+                            <h4>Asistentes en el Navegador</h4>
+                            <p>Asistentes inteligentes que acompañan tu navegación web.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-amber">🔍</div>
+                            <h4>Análisis de Contenido</h4>
+                            <p>Análisis automático de contenido web para extraer insights.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 24px;" data-cap-reveal>
+                        <h3>💼 Casos de Uso</h3>
+                        <p>Trading, productividad y análisis de información. Herramientas que potencian tu flujo de trabajo directamente desde el navegador.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. COMPUTER VISION -->
+    <section class="cap-section">
+        <div class="container">
+            <div class="cap-split">
+                <div class="section-header" data-cap-reveal>
+                    <div class="section-number">08 — Computer Vision</div>
+                    <h2>Computer Vision</h2>
+                    <p>Visión por computadora con YOLO para detección y análisis visual automatizado.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Detección de Objetos</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="cap-card-grid" data-cap-stagger>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-cyan">📷</div>
+                            <h4>Detección de Objetos</h4>
+                            <p>Identificación y clasificación de objetos en imágenes y video.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-green">🎥</div>
+                            <h4>Análisis de Cámaras</h4>
+                            <p>Procesamiento de feeds de video para detección en tiempo real.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-indigo">⚡</div>
+                            <h4>Automatización Visual</h4>
+                            <p>Automatización de procesos basada en reconocimiento visual.</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-card-icon icon-amber">🧠</div>
+                            <h4>Reconocimiento de Patrones</h4>
+                            <p>Detección e identificación de patrones visuales complejos.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 24px;" data-cap-reveal>
+                        <h3>🏭 Aplicaciones</h3>
+                        <p>Seguridad, retail, industria y análisis visual automatizado. Soluciones de visión por computadora que transforman datos visuales en acción.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contacto" class="cap-cta">
+        <div class="container">
+            <h2 data-cap-reveal>¿Tienes un proyecto en mente?</h2>
+            <p data-cap-reveal>Conversemos sobre cómo la tecnología puede resolver los desafíos de tu negocio.</p>
+            <div data-cap-reveal>
+                <a href="https://wa.me/522271178042" target="_blank" rel="noopener noreferrer" class="btn-primary">💬 Escribir por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cap-footer">
+        <div class="container">
+            <p>&copy; 2026 DevSolutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal
+        (function() {
+            const revealEls = document.querySelectorAll('[data-cap-reveal], [data-cap-stagger]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+            revealEls.forEach(el => observer.observe(el));
+        })();
+
+        // Header scroll effect
+        (function() {
+            const header = document.querySelector('.cap-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.borderBottomColor = 'rgba(148, 163, 184, 0.15)';
+                } else {
+                    header.style.borderBottomColor = 'rgba(148, 163, 184, 0.08)';
+                }
+            }, { passive: true });
+        })();
+    </script>
+</body>
+</html>
