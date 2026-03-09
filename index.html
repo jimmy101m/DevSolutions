@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capacidades Tecnológicas</title>
+    <title>DevSolutions</title>
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,15 +71,28 @@
         }
 
         .cap-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .cap-logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .cap-logo span {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-primary);
-            text-decoration: none;
             letter-spacing: -0.5px;
         }
 
-        .cap-logo span {
+        .cap-logo span em {
+            font-style: normal;
             color: var(--accent);
         }
 
@@ -536,7 +550,10 @@
     <!-- HEADER -->
     <header class="cap-header">
         <div class="container">
-            <a href="#" class="cap-logo">Dev<span>Solutions</span></a>
+            <a href="#" class="cap-logo">
+                <img src="favicon.png" alt="DevSolutions Logo">
+                <span>Dev<em>Solutions</em></span>
+            </a>
             <nav class="cap-nav">
                 <a href="#web">Plataformas Web</a>
                 <a href="#ia">Inteligencia Artificial</a>
